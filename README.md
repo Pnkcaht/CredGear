@@ -7,8 +7,6 @@
 
 CredGear is a high-performance data sanitization tool designed to extract, normalize, and deduplicate credentials from unstructured text sources, producing clean, analysis-ready data.
 
----
-
 ## Table of Contents
 
 - [What is CredGear](#what-is-credgear)
@@ -21,8 +19,6 @@ CredGear is a high-performance data sanitization tool designed to extract, norma
 - [Security Notice](#security-notice)
 - [Contributing](#contributing)
 - [License](#license)
-
----
 
 ## What is CredGear
 
@@ -65,22 +61,20 @@ CredGear is suitable for:
 
 Binary releases and documentation are available on the official website:
 
-**https://credgear.io**  
-_(replace with the actual site URL if different)_
+**[https://credgear](https://credgear.vercel.app/)**  
 
-Output Format
+## Output Format
 
 CredGear outputs normalized JSON entries similar to the following:
 
-
+```
 {
   "username": "john.doe",
   "email": "john.doe@example.com",
   "password": "********",
   "source": "input_file"
 }
-
-
+```
 
 The output is designed to integrate easily with analysis tools, SIEMs, and automation pipelines.
 
