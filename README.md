@@ -12,3 +12,5 @@ It is ideal for:
 - Data analysis
 - Credential hygiene pipelines
 - Automation workflows
+
+<img width="1231" height="670" alt="image" src="https://github.com/user-attachments/assets/bc56d2ac-c413-4567-a0ee-8269d7ec021f" />
