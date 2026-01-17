@@ -10,7 +10,7 @@ const (
 )
 
 func printBanner() {
-	fmt.Println(colorRed + colorBold + `
+	fmt.Println(colorGreen + colorBold + `
                         [ O ]
                                 \ \      p
                                 \ \  \o/
