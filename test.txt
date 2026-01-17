@@ -1,0 +1,6 @@
+example.com admin Admin123!
+example.com example.com 123
+google.com root toor
+invalid_line
+test.com user ?
+https://site.com/site.com password

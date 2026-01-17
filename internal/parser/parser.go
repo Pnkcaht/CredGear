@@ -25,26 +25,41 @@ func Parse(raw string) []model.Credential {
 		}
 
 		var url, login, password string
+		pwdIndex := -1
 
-		// identifica URL se existir
+		// 1. identifica URL
 		for _, t := range tokens {
 			if url == "" && looksLikeURL(t) {
 				url = t
 			}
 		}
 
-		// regra do teste:
-		// primeiro token significativo = login
-		// último token significativo = senha
-		login = firstValid(tokens)
-		password = lastValid(tokens)
+		// 2. identifica senha (último token significativo)
+		for i := len(tokens) - 1; i >= 0; i-- {
+			if isMeaningful(tokens[i]) {
+				password = tokens[i]
+				pwdIndex = i
+				break
+			}
+		}
 
-		// ignora senha lixo óbvia
-		if password == "?" {
+		if password == "" || password == "?" {
 			continue
 		}
 
-		if login == "" || password == "" {
+		// 3. identifica login (token antes da senha, ignorando URL)
+		for i := pwdIndex - 1; i >= 0; i-- {
+			t := tokens[i]
+			if looksLikeURL(t) {
+				continue
+			}
+			if isMeaningful(t) {
+				login = t
+				break
+			}
+		}
+
+		if login == "" {
 			continue
 		}
 
